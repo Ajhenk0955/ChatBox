@@ -12,10 +12,10 @@ import java.util.List;
 public class DistributedHashTable {
 	private Hashtable<String, String> nodesDHT;
 	public List<String[]> dhtSources;
-	private Server server;
+	private Server_ server;
 	
 	DistributedHashTable(){
-		server = new Server(this);
+		server = new Server_(this);
 	}
 
 	//checks if current dht has the key/value

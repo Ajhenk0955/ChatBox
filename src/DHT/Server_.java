@@ -6,12 +6,12 @@ import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class Server extends Thread{
+public class Server_ extends Thread{
 
 	protected Socket clientSocket;
 	private DistributedHashTable dht;
 	
-	public Server(DistributedHashTable distributedHashTable) {
+	public Server_(DistributedHashTable distributedHashTable) {
 		
 		dht = distributedHashTable;
 		
@@ -23,7 +23,7 @@ public class Server extends Thread{
 			try{
 				while(true){
 					System.out.println("Waiting for connection");
-					new Server(serverSocket.accept());
+					new Server_(serverSocket.accept());
 				}
 			} catch(IOException e){
 				System.err.println("Accept failed.");
@@ -42,7 +42,7 @@ public class Server extends Thread{
 		}	
 	}
 	
-	private Server(Socket clientSoc){
+	private Server_(Socket clientSoc){
 		clientSocket = clientSoc;
 		start();
 	}
